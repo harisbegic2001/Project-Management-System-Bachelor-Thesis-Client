@@ -1,0 +1,25 @@
+
+
+
+
+    <div *ngIf="loggedIn">
+        <button class="logout-button" type="submit" (click)="logout()">Logout</button>
+     </div>
+
+
+
+<form *ngIf="!loggedIn" #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off" >
+    <input 
+          name="email"
+          [(ngModel)]="model.email"
+          class="form-control me-2" 
+          type="text" 
+          placeholder="Email" >
+    <input 
+          name="password"
+          [(ngModel)]="model.password"
+          class="form-control me-2" 
+          type="password" 
+          placeholder="Password" >
+    <button class="btn btn-outline-success" type="submit">Login</button>
+  </form>
